@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ascopy Computer School</title>
+  <style>
+    /* ... (existing styles remain unchanged) ... */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header, footer {
+      background: #0056b3;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #hero {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    #hero button {
+      padding: 10px 20px;
+      background: white;
+      color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+    }
+
+    /* Admin Dashboard */
+    #admin {
+      display: none;
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .admin-panel {
+      display: none;
+      background: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .admin-panel h3 {
+      margin-bottom: 15px;
+    }
+
+    .admin-btn {
+      padding: 10px;
+      background: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ascopy Computer School</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#admin">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Empowering Minds Through Technology</h2>
+    <p>Join Ascopy Computer School and start your journey today!</p>
+    <button onclick="enrollNow()">Enroll Now</button>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We provide high-quality computer education for all ages, empowering individuals with relevant digital skills.</p>
+  </section>
+
+  <section id="courses">
+    <h2>Courses Offered</h2>
+    <ul>
+      <li>Basic Computer Skills</li>
+      <li>Web Development</li>
+      <li>Graphic Design</li>
+      <li>Python & JavaScript Programming</li>
+      <li>Data Analysis</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/200x150?text=Classroom" alt="Classroom">
+      <img src="https://via.placeholder.com/200x150?text=Students" alt="Students">
+      <img src="https://via.placeholder.com/200x150?text=Training" alt="Training">
+      <img src="https://via.placeholder.com/200x150?text=Certificates" alt="Certificates">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section id="admin">
+    <h2>Admin Login</h2>
+    <form id="adminLogin">
+      <input type="text" id="adminUser" placeholder="Username" required>
+      <input type="password" id="adminPass" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="admin-panel" id="dashboard">
+      <h3>Welcome, Admin!</h3>
+      <p>Use the buttons below to manage content (feature under construction).</p>
+      <button class="admin-btn" onclick="alert('Manage Courses - Coming Soon')">Manage Courses</button>
+      <button class="admin-btn" onclick="alert('View Messages - Coming Soon')">View Messages</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ascopy Computer School. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function enrollNow() {
+      alert("Thank you for your interest! Please fill out the contact form.");
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      alert(`Thank you, ${name}! Your message has been received.`);
+      this.reset();
+    });
+
+    document.getElementById("adminLogin").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const user = document.getElementById("adminUser").value;
+      const pass = document.getElementById("adminPass").value;
+
+      if (user === "admin" && pass === "ascopy123") {
+        document.getElementById("dashboard").style.display = "block";
+        this.style.display = "none";
+      } else {
+        alert("Incorrect login. Try admin / ascopy123");
+      }
+    });
+  </script>
+</body>
+</html>
